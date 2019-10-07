@@ -14,13 +14,14 @@ app.locals.snacks = [
 ]
 
 app.get("/", cors(), (request, response) => {
-  response.send("here is some connections");
-});
-
-app.get("/api/v1/snacks", (request, response) => {
   const { snacks } = app.locals;
   return response.status(200).json( snacks );
 });
+
+// app.get("/", (request, response) => {
+//   const { snacks } = app.locals;
+//   return response.status(200).json( snacks );
+// });
 
 app.listen(app.get("port"), () => {
   console.log(
